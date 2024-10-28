@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/favicon.webp" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <main id="container">
+        <div id="container-micro">
+            <div class="title-app">
+                <h1>Lista de Tarefas!
+                    <img src="assets/tarefa.png" alt="">
+                </h1>
+            </div>
+
+            <div class="form-todo-list">
+                <form id="todo-form">
+                    <p>Adicione a sua tarefa</p>
+                    <div class="form-control">
+                        <input type="text" id="todoInput" placeholder="O que você vai fazer?">
+                        <button type="submit" id="addNewTask">
+                            <i class="ph ph-plus"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="form-edit-form hide">
+                <form id="edit-form">
+                    <p>Edite a sua tarefa:</p>
+                    <div class="form-control">
+                        <input type="text" id="edit-input">
+                        <button type="submit" onclick="confirmEdiTask(event, this)">
+
+                            <i class="ph ph-checks"></i>
+                        </button>
+                    </div>
+                    <button id="cancel-edit-btn" onclick="cancelEdit()">Cancelar</button>
+                </form>
+            </div>
+
+            <div id="toolbar">
+                <div class="search">
+                    <h4>Pesquisar:</h4>
+                    <form>
+                        <input type="text" id="searchInput" placeholder="Buscar">
+                        <button id="eraseButton">
+                            <i class="ph ph-backspace"></i>
+                        </button>
+                    </form>
+                </div>
+                <span class="hr-toolbar"></span>
+                <div id="filter">
+                    <h4>Filter:</h4>
+                    <select id="filter-select">
+                        <option value="all">Todos</option>
+                        <option value="done">Feitos</option>
+                        <option value="todo">A fazer</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="div-add-hide">
+                <div id="todo-list">
+                    <div class="hide-no-task-task">
+                        <div id="hide-no-task" class="title-no-task">
+                            <p>Sem tarefa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
